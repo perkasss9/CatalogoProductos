@@ -1,0 +1,27 @@
+﻿<Application x:Class="CatalogoProductos.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:v="clr-namespace:CatalogoProductos.Views"
+             xmlns:vm="clr-namespace:CatalogoProductos.ViewModels"
+             xmlns:local="clr-namespace:CatalogoProductos"
+             StartupUri="Views/MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <DataTemplate DataType="{x:Type vm:MainViewModel}">
+                <v:MainWindow/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:HomeViewModel}">
+                <v:HomeViewModel/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:CategoriaViewModel}">
+                <v:CategoriaView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:ProductoViewModel}">
+                <v:ProductoView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:AjustesViewModel}">
+                <v:AjustesView/>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
