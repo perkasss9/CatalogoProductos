@@ -25,26 +25,5 @@ namespace CatalogoProductos.Views
         {
             InitializeComponent();
         }
-
-        private void BotonEspanol_Click(object sender, RoutedEventArgs e)
-        {
-            ChangeLanguage("es");
-        }
-
-        private void BotonIngles_Click(object sender, RoutedEventArgs e)
-        {
-            ChangeLanguage("en");
-        }
-
-        private void ChangeLanguage(string cultureName)
-        {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(cultureName);
-
-            Properties.Settings.Default.Idioma = cultureName;
-            Properties.Settings.Default.Save();
-
-            MessageBox.Show("Por favor, reinicie la aplicación para aplicar los cambios de idioma.");
-            Application.Current.Shutdown();
-        }
     }
 }

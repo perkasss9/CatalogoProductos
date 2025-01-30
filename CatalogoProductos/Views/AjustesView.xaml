@@ -5,14 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:vm="clr-namespace:CatalogoProductos.ViewModels"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="400" d:DesignWidth="700">
 
     <UserControl.DataContext>
         <vm:AjustesViewModel/>
     </UserControl.DataContext>
 
     <Grid Background="White">
-        <Button x:Name="BotonEspanol" Content="Español" FontSize="30" Height="75" Width="200" VerticalAlignment="Top" Margin="0,75,0,0" Click="BotonEspanol_Click"></Button>
-        <Button x:Name="BotonIngles" Content="English" FontSize="30" Height="75" Width="200" VerticalAlignment="Top" Margin="0,175,0,0" Click="BotonIngles_Click"></Button>
+        <Button x:Name="BotonEspanol" Content="Español" FontSize="30" Height="75" Width="200" VerticalAlignment="Top" Margin="0,75,0,0" Command="{Binding CambiarEspCommand}"></Button>
+        <Button x:Name="BotonIngles" Content="English" FontSize="30" Height="75" Width="200" VerticalAlignment="Top" Margin="0,175,0,0" Command="{Binding CambiarEngCommand}"></Button>
     </Grid>
 </UserControl>
