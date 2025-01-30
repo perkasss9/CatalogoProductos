@@ -132,9 +132,6 @@
   <data name="BotonSalir" xml:space="preserve">
     <value>Salir</value>
   </data>
-  <data name="TextoCategorias" xml:space="preserve">
-    <value>Categorias</value>
-  </data>
   <data name="TextoElementos" xml:space="preserve">
     <value>Elementos</value>
   </data>
@@ -143,8 +140,5 @@
   </data>
   <data name="TextoOtros" xml:space="preserve">
     <value>Otros elementos</value>
-  </data>
-  <data name="TextoProductos" xml:space="preserve">
-    <value>Productos</value>
   </data>
 </root>

@@ -106,15 +106,6 @@ namespace CatalogoProductos.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Categories.
-        /// </summary>
-        public static string TextoCategorias {
-            get {
-                return ResourceManager.GetString("TextoCategorias", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a Elements.
         /// </summary>
         public static string TextoElementos {
@@ -138,15 +129,6 @@ namespace CatalogoProductos.Properties {
         public static string TextoOtros {
             get {
                 return ResourceManager.GetString("TextoOtros", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Products.
-        /// </summary>
-        public static string TextoProductos {
-            get {
-                return ResourceManager.GetString("TextoProductos", resourceCulture);
             }
         }
     }
