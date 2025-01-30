@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CatalogoProductos.Repositories;
+namespace CatalogoProductos.Services;
 
-internal class ProductRepository : IRepositories<Product>
+internal class ProductService : IRepositoryServices<Product>
 {
     public void Add(Product item)
     {
@@ -33,5 +33,4 @@ internal class ProductRepository : IRepositories<Product>
     {
         throw new NotImplementedException();
     }
-
 }

@@ -5,33 +5,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CatalogoProductos.Repositories;
+namespace CatalogoProductos.Services;
 
-internal class ProductRepository : IRepositories<Product>
+internal class CategoryService : IRepositoryServices<Category>
 {
-    public void Add(Product item)
+    public void Add(Category item)
     {
         throw new NotImplementedException();
     }
 
-    public void Delete(Product item)
+    public void Delete(Category item)
     {
         throw new NotImplementedException();
     }
 
-    public Product Get(int id)
+    public Category Get(int id)
     {
         throw new NotImplementedException();
     }
 
-    public IEnumerable<Product> GetAll()
+    public IEnumerable<Category> GetAll()
     {
         throw new NotImplementedException();
     }
 
-    public void Update(Product item)
+    public void Update(Category item)
     {
         throw new NotImplementedException();
     }
-
 }
