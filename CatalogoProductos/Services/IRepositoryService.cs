@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CatalogoProductos.Services;
 
-internal interface IRepositoryServices <T>
+internal interface IRepositoryService <T>
 {
     public void Add(T item);
     public void Update(T item);

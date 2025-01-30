@@ -2,4 +2,4 @@
 
 namespace CatalogoProductos.ViewModels;
 
-public class ProductoViewModel { }
+public class ProductoViewModel : ObservableObject { }

@@ -4,33 +4,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CatalogoProductos.Repositories;
+
 
 namespace CatalogoProductos.Services;
 
-internal class ProductService : IRepositoryServices<Product>
+internal class ProductService : IRepositoryService<Product>
 {
-    public void Add(Product item)
+    private readonly IRepository<Product> _repositorioProductos;
+
+    public ProductService(IRepository<Product> repositorioProductos)
     {
-        throw new NotImplementedException();
+        _repositorioProductos = repositorioProductos;
     }
 
-    public void Delete(Product item)
-    {
-        throw new NotImplementedException();
-    }
+    public void Add(Product item) => _repositorioProductos.Add(item);
 
-    public Product Get(int id)
-    {
-        throw new NotImplementedException();
-    }
+    public void Delete(Product item) => _repositorioProductos.Delete(item);
 
-    public IEnumerable<Product> GetAll()
-    {
-        throw new NotImplementedException();
-    }
+    public Product Get(int id) => _repositorioProductos.Get(id);
 
-    public void Update(Product item)
-    {
-        throw new NotImplementedException();
-    }
+    public IEnumerable<Product> GetAll() => _repositorioProductos.GetAll();
+
+    public void Update(Product item) => _repositorioProductos.Update(item);
 }

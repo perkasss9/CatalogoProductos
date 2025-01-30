@@ -1,4 +1,6 @@
-﻿using CatalogoProductos.Models;
+﻿using CatalogoProductos.Data;
+using CatalogoProductos.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,31 +9,28 @@ using System.Threading.Tasks;
 
 namespace CatalogoProductos.Repositories;
 
-internal class CategoryRepository : IRepositories<Category>
+public class CategoryRepository(AppDbContext context) : IRepository<Category>
 {
+    private readonly AppDbContext _context = context;
+
     public void Add(Category item)
     {
-        throw new NotImplementedException();
+        _context.Add(item);
+        _context.SaveChanges();
     }
 
     public void Delete(Category item)
     {
-        throw new NotImplementedException();
+        _context.Remove(item);
+        _context.SaveChanges();
     }
 
-    public Category Get(int id)
-    {
-        throw new NotImplementedException();
-    }
-
-    public IEnumerable<Category> GetAll()
-    {
-        throw new NotImplementedException();
-    }
-
+    public Category Get(int id) => _context.Categories.ToList<Category>().Find(c => c.Id == id);
+    public IEnumerable<Category> GetAll() => _context.Categories.ToList();
     public void Update(Category item)
     {
-        throw new NotImplementedException();
+        _context.Entry(item).State = EntityState.Modified;
+        _context.SaveChanges();
     }
 
 }

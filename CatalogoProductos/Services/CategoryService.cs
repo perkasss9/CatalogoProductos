@@ -1,4 +1,5 @@
 ﻿using CatalogoProductos.Models;
+using CatalogoProductos.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,30 +8,22 @@ using System.Threading.Tasks;
 
 namespace CatalogoProductos.Services;
 
-internal class CategoryService : IRepositoryServices<Category>
+internal class CategoryService : IRepositoryService<Category>
 {
-    public void Add(Category item)
+    private readonly IRepository<Category> _repositorioCategorias;
+
+    public CategoryService(IRepository<Category> repositorioCategorias)
     {
-        throw new NotImplementedException();
+        _repositorioCategorias = repositorioCategorias;
     }
 
-    public void Delete(Category item)
-    {
-        throw new NotImplementedException();
-    }
+    public void Add(Category item) => _repositorioCategorias.Add(item);
 
-    public Category Get(int id)
-    {
-        throw new NotImplementedException();
-    }
+    public void Delete(Category item) => _repositorioCategorias.Delete(item);
 
-    public IEnumerable<Category> GetAll()
-    {
-        throw new NotImplementedException();
-    }
+    public Category Get(int id) => _repositorioCategorias.Get(id);
 
-    public void Update(Category item)
-    {
-        throw new NotImplementedException();
-    }
+    public IEnumerable<Category> GetAll() => _repositorioCategorias.GetAll();
+
+    public void Update(Category item) => _repositorioCategorias.Update(item);
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CatalogoProductos.Repositories;
 
-interface IRepositories <T>
+public interface IRepository <T>
 {
     public void Add(T item);
     public void Update(T item);
