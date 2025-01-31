@@ -9,7 +9,7 @@ using CatalogoProductos.Repositories;
 
 namespace CatalogoProductos.Services;
 
-internal class ProductService : IRepositoryService<Product>
+public class ProductService : IRepositoryService<Product>
 {
     private readonly IRepository<Product> _repositorioProductos;
 

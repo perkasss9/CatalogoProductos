@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CatalogoProductos.Services;
 
-internal class CategoryService : IRepositoryService<Category>
+public class CategoryService : IRepositoryService<Category>
 {
     private readonly IRepository<Category> _repositorioCategorias;
 
