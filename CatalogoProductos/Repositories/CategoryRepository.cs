@@ -1,11 +1,6 @@
 ﻿using CatalogoProductos.Data;
 using CatalogoProductos.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CatalogoProductos.Repositories;
 
@@ -25,7 +20,7 @@ public class CategoryRepository(AppDbContext context) : IRepository<Category>
         _context.SaveChanges();
     }
 
-    public Category Get(int id) => _context.Categories.ToList<Category>().Find(c => c.Id == id);
+    public Category Get(int id) => _context.Categories.Find(id);
     public IEnumerable<Category> GetAll() => _context.Categories.ToList();
     public void Update(Category item)
     {

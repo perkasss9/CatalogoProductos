@@ -1,29 +1,24 @@
 ﻿using CatalogoProductos.Models;
 using CatalogoProductos.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CatalogoProductos.Services;
 
 public class CategoryService : IRepositoryService<Category>
 {
-    private readonly IRepository<Category> _repositorioCategorias;
+    private readonly IRepository<Category> _repositoryCategories;
 
     public CategoryService(IRepository<Category> repositorioCategorias)
     {
-        _repositorioCategorias = repositorioCategorias;
+        _repositoryCategories = repositorioCategorias;
     }
 
-    public void Add(Category item) => _repositorioCategorias.Add(item);
+    public void Add(Category item) => _repositoryCategories.Add(item);
 
-    public void Delete(Category item) => _repositorioCategorias.Delete(item);
+    public void Delete(Category item) => _repositoryCategories.Delete(item);
 
-    public Category Get(int id) => _repositorioCategorias.Get(id);
+    public Category Get(int id) => _repositoryCategories.Get(id);
 
-    public IEnumerable<Category> GetAll() => _repositorioCategorias.GetAll();
+    public IEnumerable<Category> GetAll() => _repositoryCategories.GetAll();
 
-    public void Update(Category item) => _repositorioCategorias.Update(item);
+    public void Update(Category item) => _repositoryCategories.Update(item);
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CatalogoProductos.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace CatalogoProductos.Views
         public ProductoView()
         {
             InitializeComponent();
+            DataContext = new ProductoViewModel();
         }
     }
 }

@@ -1,30 +1,24 @@
 ﻿using CatalogoProductos.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using CatalogoProductos.Repositories;
-
 
 namespace CatalogoProductos.Services;
 
 public class ProductService : IRepositoryService<Product>
 {
-    private readonly IRepository<Product> _repositorioProductos;
+    private readonly IRepository<Product> _repositoryProducts;
 
     public ProductService(IRepository<Product> repositorioProductos)
     {
-        _repositorioProductos = repositorioProductos;
+        _repositoryProducts = repositorioProductos;
     }
 
-    public void Add(Product item) => _repositorioProductos.Add(item);
+    public void Add(Product item) => _repositoryProducts.Add(item);
 
-    public void Delete(Product item) => _repositorioProductos.Delete(item);
+    public void Delete(Product item) => _repositoryProducts.Delete(item);
 
-    public Product Get(int id) => _repositorioProductos.Get(id);
+    public Product Get(int id) => _repositoryProducts.Get(id);
 
-    public IEnumerable<Product> GetAll() => _repositorioProductos.GetAll();
+    public IEnumerable<Product> GetAll() => _repositoryProducts.GetAll();
 
-    public void Update(Product item) => _repositorioProductos.Update(item);
+    public void Update(Product item) => _repositoryProducts.Update(item);
 }

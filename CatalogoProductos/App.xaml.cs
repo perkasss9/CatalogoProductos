@@ -6,8 +6,6 @@ using CatalogoProductos.ViewModels;
 using CatalogoProductos.Views;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using System.Configuration;
-using System.Data;
 using System.Globalization;
 using System.Windows;
 

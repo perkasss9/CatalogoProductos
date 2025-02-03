@@ -1,11 +1,6 @@
 ﻿using CatalogoProductos.Data;
 using CatalogoProductos.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CatalogoProductos.Repositories;
 
@@ -25,7 +20,7 @@ public class ProductRepository(AppDbContext context) : IRepository<Product>
         _context.SaveChanges();
     }
 
-    public Product Get(int id) => _context.Products.ToList<Product>().Find(c => c.Id == id);
+    public Product Get(int id) => _context.Products.Find(id);
 
     public IEnumerable<Product> GetAll() => _context.Products.ToList();
 
