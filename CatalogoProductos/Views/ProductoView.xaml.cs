@@ -24,7 +24,6 @@ namespace CatalogoProductos.Views
         public ProductoView()
         {
             InitializeComponent();
-            DataContext = new ProductoViewModel();
         }
     }
 }

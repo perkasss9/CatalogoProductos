@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using CatalogoProductos.ViewModels;
+using System.Globalization;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -19,17 +20,7 @@ public partial class MainWindow : Window
 {
     public MainWindow()
     {
-        LoadSettings();
         InitializeComponent();
-    }
-
-    private void LoadSettings()
-    {
-        Thread.CurrentThread.CurrentUICulture = new CultureInfo(Properties.Settings.Default.Idioma);
-    }
-
-    private void cerrarSesion_Click(object sender, RoutedEventArgs e)
-    {
-        Application.Current.Shutdown();
+        DataContext = new MainViewModel();
     }
 }

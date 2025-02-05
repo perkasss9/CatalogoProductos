@@ -61,7 +61,7 @@
                     <TextBlock Text="{x:Static p:Resources.BotonAjustes}"></TextBlock>
                 </StackPanel>
             </Button>
-            <Button Grid.Row="6" x:Name="cerrarSesion" Width="65" Height="25" Template="{StaticResource miBoton}" Click="cerrarSesion_Click">
+            <Button Grid.Row="6" x:Name="cerrarSesion" Width="65" Height="25" Template="{StaticResource miBoton}" Command="{Binding CerrarAppCommand}">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/Icons/exit.png" Width="15" Height="15" Margin="0,0,2,0"></Image>
                     <TextBlock Text="{x:Static p:Resources.BotonSalir}"></TextBlock>

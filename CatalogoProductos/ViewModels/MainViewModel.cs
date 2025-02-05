@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using System.Windows;
 
 namespace CatalogoProductos.ViewModels;
 
@@ -29,5 +30,11 @@ public partial class MainViewModel : ObservableObject
 
     [RelayCommand]
     private void ActiveAjustesView() => ActiveView = ajustesViewModel;
+
+    [RelayCommand]
+    private void CerrarApp()
+    {
+        Application.Current.Shutdown();
+    }
 
 }
