@@ -20,7 +20,7 @@ public class CategoryRepository(AppDbContext context) : IRepository<Category>
         _context.SaveChanges();
     }
 
-    public Category Get(int id) => _context.Categories.Find(id);
+    public Category Get(int id) => _context.Categories.ToList<Category>().Find(c => c.Id == id);
     public IEnumerable<Category> GetAll() => _context.Categories.ToList();
     public void Update(Category item)
     {

@@ -21,35 +21,15 @@ public partial class ProductoViewModel : ObservableObject
     private int id;
 
     [ObservableProperty]
-    private string name;
+    private string nombre;
 
     [ObservableProperty]
-    private string description;
+    private string descripcion;
 
     [ObservableProperty]
-    private int categoryId;
+    private int categoiaId;
 
     [ObservableProperty]
-    private double price;
+    private double precio;
 
-    [RelayCommand]
-    private void AddProduct()
-    {
-        try
-        {
-            var product = new Product
-            {
-                Id = Id,
-                Name = Name,
-                Description = Description,
-                Price = Price,
-                CategoryId = CategoryId
-            };
-            _productService.Add(product);
-        }
-        catch (Exception ex)
-        {
-            MessageBox.Show($"Error adding product: {ex.Message}");
-        }
-    }
 }

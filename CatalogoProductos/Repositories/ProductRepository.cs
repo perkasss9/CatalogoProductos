@@ -20,7 +20,7 @@ public class ProductRepository(AppDbContext context) : IRepository<Product>
         _context.SaveChanges();
     }
 
-    public Product Get(int id) => _context.Products.Find(id);
+    public Product Get(int id) => _context.Products.ToList<Product>().Find(c => c.Id == id);
 
     public IEnumerable<Product> GetAll() => _context.Products.ToList();
 
