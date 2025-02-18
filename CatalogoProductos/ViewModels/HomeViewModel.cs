@@ -2,4 +2,4 @@
 
 namespace CatalogoProductos.ViewModels;
 
-public class HomeViewModel : ObservableObject { }
+public partial class HomeViewModel : ObservableObject { }

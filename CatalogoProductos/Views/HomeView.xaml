@@ -8,10 +8,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="700">
 
-    <UserControl.DataContext>
-        <vm:HomeViewModel/>
-    </UserControl.DataContext>
-
     <Grid Background="White" >
         <Grid.RowDefinitions>
             <RowDefinition Height="40"></RowDefinition>

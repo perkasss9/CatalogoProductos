@@ -4,20 +4,23 @@ using System.Windows;
 
 namespace CatalogoProductos.ViewModels;
 
-public partial class MainViewModel : ObservableObject
+partial class MainViewModel(
+        HomeViewModel homeViewModel,
+        ProductoViewModel productoViewModel,
+        CategoriaViewModel categoriaViewModel,
+        AjustesViewModel ajustesViewModel
+    ) : ObservableObject
 {
     [ObservableProperty]
-    private object _activeView;
+    private object _activeView = homeViewModel;
 
-    public HomeViewModel homeViewModel { get; } = new HomeViewModel();
+    public HomeViewModel homeViewModel { get; } = homeViewModel;
 
-    public CategoriaViewModel categoriaViewModel { get; } = new CategoriaViewModel();
+    public CategoriaViewModel categoriaViewModel { get; } = categoriaViewModel;
 
-    public ProductoViewModel productoViewModel { get; } = new ProductoViewModel();
+    public ProductoViewModel productoViewModel { get; } = productoViewModel;
 
-    public AjustesViewModel ajustesViewModel { get; } = new AjustesViewModel();
-
-    public MainViewModel() => ActiveView = homeViewModel;
+    public AjustesViewModel ajustesViewModel { get; } = ajustesViewModel;
 
     [RelayCommand]
     private void ActiveHomeView() => ActiveView = homeViewModel;

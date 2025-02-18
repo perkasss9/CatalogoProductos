@@ -7,9 +7,6 @@
              xmlns:p="clr-namespace:CatalogoProductos.Properties"
              mc:Ignorable="d" 
              Background="White" d:DesignHeight="400" d:DesignWidth="700">
-    <UserControl.DataContext>
-        <vm:ProductoViewModel/>
-    </UserControl.DataContext>
 
     <Grid>
         <Grid.ColumnDefinitions>

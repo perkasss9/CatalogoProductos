@@ -3,12 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:v="clr-namespace:CatalogoProductos.Views"
              xmlns:vm="clr-namespace:CatalogoProductos.ViewModels"
-             xmlns:local="clr-namespace:CatalogoProductos"
-             StartupUri="Views/MainWindow.xaml">
+             xmlns:local="clr-namespace:CatalogoProductos">
+    
     <Application.Resources>
         <ResourceDictionary>
             <DataTemplate DataType="{x:Type vm:MainViewModel}">
-                <v:MainWindow/>
+                <v:MainView/>
             </DataTemplate>
             <DataTemplate DataType="{x:Type vm:HomeViewModel}">
                 <v:HomeView/>

@@ -26,7 +26,7 @@ namespace CatalogoProductos
 
             ServiceCollection services = new();
 
-            services.AddSingleton<MainWindow>();
+            services.AddSingleton<MainView>();
             services.AddTransient<HomeView>();
             services.AddTransient<ProductoView>();
             services.AddTransient<CategoriaView>();
@@ -52,6 +52,10 @@ namespace CatalogoProductos
                     options.UseNpgsql("Host=localhost;Port=5432;Database=WpfAppDb;Username=postgres;Password=Interfaces-2425"));
 
             var serviceProvider = services.BuildServiceProvider();
+
+            var view = serviceProvider.GetService<MainView>();
+            view.DataContext = serviceProvider.GetService<MainViewModel>();
+            view.Show();
 
         }
     }
