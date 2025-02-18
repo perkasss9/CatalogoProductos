@@ -8,7 +8,15 @@
              d:DesignHeight="400" d:DesignWidth="700">
 
     <Grid Background="White">
-        <Button x:Name="BotonEspanol" Content="Español" FontSize="30" Height="75" Width="200" VerticalAlignment="Top" Margin="0,75,0,0" Command="{Binding CambiarEspCommand}"></Button>
-        <Button x:Name="BotonIngles" Content="English" FontSize="30" Height="75" Width="200" VerticalAlignment="Top" Margin="0,175,0,0" Command="{Binding CambiarEngCommand}"></Button>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Cambiar de idioma" FontSize="36" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+        <Button Grid.Row="1" x:Name="BotonEspanol" Content="Español" FontSize="30" Margin="200,5,200,20" Command="{Binding CambiarEspCommand}"></Button>
+        <Button Grid.Row="2" x:Name="BotonIngles" Content="English" FontSize="30" Margin="200,5,200,20" Command="{Binding CambiarEngCommand}"></Button>
     </Grid>
 </UserControl>

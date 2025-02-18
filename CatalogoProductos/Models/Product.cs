@@ -3,11 +3,11 @@ namespace CatalogoProductos.Models;
 
 public class Product
 {
-    public int _id { get; set; }
-    public string _nombre { get; set; }
-    public string _descripcion { get; set; }
-    public double? _precio { get; set; }
-    public int? _idCategoria { get; set; }
+    public int _id;
+    public string _nombre;
+    public string _descripcion;
+    public double? _precio;
+    public int? _idCategoria;
 
     public int Id {
         get => _id;

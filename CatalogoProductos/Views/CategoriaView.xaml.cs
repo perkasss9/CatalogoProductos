@@ -24,5 +24,24 @@ namespace CatalogoProductos.Views
         {
             InitializeComponent();
         }
+
+        private void Window_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            DependencyObject clickedElement = e.OriginalSource as DependencyObject;
+
+            while (clickedElement != null)
+            {
+                if (clickedElement is TextBox || clickedElement is Button)
+                {
+                    return;
+                }
+                clickedElement = VisualTreeHelper.GetParent(clickedElement);
+            }
+
+            if (!miListView.IsMouseOver)
+            {
+                miListView.SelectedItem = null;
+            }
+        }
     }
 }

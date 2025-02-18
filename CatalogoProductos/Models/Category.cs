@@ -3,9 +3,9 @@ namespace CatalogoProductos.Models;
 
 public class Category
 {
-    public int _id { get; set; }
-    public string _nombre { get; set; }
-    public string _descripcion { get; set; }
+    public int _id;
+    public string _nombre;
+    public string _descripcion;
 
     public int Id
     {
