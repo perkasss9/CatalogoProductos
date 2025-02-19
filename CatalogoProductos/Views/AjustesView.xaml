@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:vm="clr-namespace:CatalogoProductos.ViewModels"
+             xmlns:p="clr-namespace:CatalogoProductos.Properties"
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="700">
 
@@ -15,7 +16,7 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Cambiar de idioma" FontSize="36" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+        <TextBlock Text="{x:Static p:Resources.CambiarIdioma}" FontSize="36" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
         <Button Grid.Row="1" x:Name="BotonEspanol" Content="Español" FontSize="30" Margin="200,5,200,20" Command="{Binding CambiarEspCommand}"></Button>
         <Button Grid.Row="2" x:Name="BotonIngles" Content="English" FontSize="30" Margin="200,5,200,20" Command="{Binding CambiarEngCommand}"></Button>
     </Grid>

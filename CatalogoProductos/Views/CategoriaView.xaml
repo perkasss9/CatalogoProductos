@@ -11,17 +11,17 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"></ColumnDefinition>
-            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="400"></ColumnDefinition>
+            <ColumnDefinition Width="700*" MaxWidth="800"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
         <Grid Grid.Column="0">
-            <ListView x:Name="miListView" SelectedItem="{Binding CategoriaSeleccionada, Mode=TwoWay}" ItemsSource="{Binding Categorias}">
+            <ListView x:Name="miListView" SelectedItem="{Binding CategoriaSeleccionada, Mode=TwoWay}" ItemsSource="{Binding Categorias}" MaxWidth="450" HorizontalAlignment="Left">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="ID" Width="30" DisplayMemberBinding="{Binding Id}"/>
-                        <GridViewColumn Header="Nombre" Width="110" DisplayMemberBinding="{Binding Nombre}"/>
-                        <GridViewColumn Header="Descripción" Width="200" DisplayMemberBinding="{Binding Descripcion}"/>
+                        <GridViewColumn Header="{x:Static p:Resources.Nombre}" Width="110" DisplayMemberBinding="{Binding Nombre}"/>
+                        <GridViewColumn Header="{x:Static p:Resources.Categoria}" Width="210" DisplayMemberBinding="{Binding Descripcion}"/>
                     </GridView>
                 </ListView.View>
             </ListView>
@@ -29,12 +29,12 @@
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="70*"/>
-                <RowDefinition Height="60*"/>
+                <RowDefinition Height="35*"/>
                 <RowDefinition Height="110*"/>
                 <RowDefinition Height="100*"/>
             </Grid.RowDefinitions>
 
-            <TextBlock Grid.Row="0" Text="{x:Static p:Resources.BotonCategorias}" FontSize="36" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+            <TextBlock Grid.Row="0" Text="{x:Static p:Resources.Categorias}" FontSize="36" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
 
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
@@ -49,7 +49,7 @@
                         <RowDefinition Height="50*"/>
                     </Grid.RowDefinitions>
                     <TextBlock Grid.Row="0" Text="ID" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-                    <TextBox Grid.Row="1" Margin="20,0,20,0" VerticalAlignment="Top" IsEnabled="False" Text="{Binding CategoriaSeleccionada.Id, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"></TextBox>
+                    <TextBox Grid.Row="1" Margin="10,2,10,5" IsEnabled="False" Text="{Binding CategoriaSeleccionada.Id, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"></TextBox>
                 </Grid>
 
                 <Grid Grid.Column="1">
@@ -57,8 +57,8 @@
                         <RowDefinition Height="25*"/>
                         <RowDefinition Height="50*"/>
                     </Grid.RowDefinitions>
-                    <TextBlock Grid.Row="0" Text="Nombre" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-                    <TextBox Grid.Row="1" Margin="10,0,10,0" VerticalAlignment="Top" Text="{Binding Nombre, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"></TextBox>
+                    <TextBlock Grid.Row="0" Text="{x:Static p:Resources.Nombre}" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                    <TextBox Grid.Row="1" Margin="10,2,10,5" Text="{Binding Nombre, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"></TextBox>
                 </Grid>
 
                 <Grid Grid.Column="2">
@@ -66,8 +66,8 @@
                         <RowDefinition Height="25*"/>
                         <RowDefinition Height="50*"/>
                     </Grid.RowDefinitions>
-                    <TextBlock Grid.Row="0" Text="Descripción" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-                    <TextBox Grid.Row="1" Margin="10,0,10,0" VerticalAlignment="Top" Text="{Binding Descripcion, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"></TextBox>
+                    <TextBlock Grid.Row="0" Text="{x:Static p:Resources.Categoria}" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                    <TextBox Grid.Row="1" Margin="10,2,10,5" Text="{Binding Descripcion, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"></TextBox>
                 </Grid>
 
             </Grid>
@@ -82,9 +82,9 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
 
-                <Button Grid.ColumnSpan="2" Grid.Row="0" Content="Añadir Categoría" FontSize="18" Margin="10" IsEnabled="{Binding CanAddCategoria}" Command="{Binding AddCategoriaCommand}"></Button>
-                <Button Grid.Column="0" Grid.Row="1" Content="Modificar Categoría" Margin="10" IsEnabled="{Binding CanEditDeleteDeselectCategoria}" Command="{Binding UpdateCategoriaCommand}"></Button>
-                <Button Grid.Column="1" Grid.Row="1" Content="Eliminar Categoría" Margin="10" IsEnabled="{Binding CanEditDeleteDeselectCategoria}" Command="{Binding DeleteCategoriaCommand}"></Button>
+                <Button Grid.ColumnSpan="2" Grid.Row="0" Content="{x:Static p:Resources.AñadirCategoría}" FontSize="18" Margin="10" IsEnabled="{Binding CanAddCategoria}" Command="{Binding AddCategoriaCommand}"></Button>
+                <Button Grid.Column="0" Grid.Row="1" Content="{x:Static p:Resources.ModificarCategoría}" Margin="10" IsEnabled="{Binding CanEditDeleteDeselectCategoria}" Command="{Binding UpdateCategoriaCommand}"></Button>
+                <Button Grid.Column="1" Grid.Row="1" Content="{x:Static p:Resources.BorrarCategoria}" Margin="10" IsEnabled="{Binding CanEditDeleteDeselectCategoria}" Command="{Binding DeleteCategoriaCommand}"></Button>
 
             </Grid>
         </Grid>

@@ -6,7 +6,7 @@
         xmlns:vm="clr-namespace:CatalogoProductos.ViewModels"
         xmlns:p="clr-namespace:CatalogoProductos.Properties"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" MinHeight="250" MinWidth="600">
+        Title="MainWindow" Height="550" Width="900" MinHeight="400" MinWidth="750">
 
     <Window.Resources>
         <ControlTemplate x:Key="miBoton" TargetType="Button">
@@ -24,48 +24,62 @@
         </ControlTemplate>
     </Window.Resources>
 
-    <Grid>
+    <Grid Background="#ECECEC">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*" MaxWidth="150"></ColumnDefinition>
             <ColumnDefinition Width="8*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Grid Background= "#ECECEC">
+        <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="50*"></RowDefinition>
-                <RowDefinition Height="30*"></RowDefinition>
-                <RowDefinition Height="30*"></RowDefinition>
-                <RowDefinition Height="30*"></RowDefinition>
-                <RowDefinition Height="200*"></RowDefinition>
-                <RowDefinition Height="30*"></RowDefinition>
-                <RowDefinition Height="30*"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
             </Grid.RowDefinitions>
 
-            <TextBlock Grid.Row="0" x:Name="nombreApp" Text="App" HorizontalAlignment="Center" FontSize="24" Width="44" Margin="5" FontWeight="DemiBold"/>
-            <Button Grid.Row="1" x:Name="InicioBoton" Width="65" Height="25" Template="{StaticResource miBoton}" Command="{Binding ActiveHomeViewCommand}">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="/Icons/home.png" Width="15" Height="15" Margin="0,0,2,0"></Image>
-                    <TextBlock Text="{x:Static p:Resources.BotonInicio}" />
-                </StackPanel>
-            </Button>
+            <TextBlock Grid.Row="0" x:Name="nombreApp" Text="App" HorizontalAlignment="Center" FontSize="24" Margin="5" FontWeight="DemiBold"/>
 
-            <Button Grid.Row="2" x:Name="categoriasBoton" Width="65" Height="25" Template="{StaticResource miBoton}" Command="{Binding ActiveCategoriaViewCommand}" Content="{x:Static p:Resources.BotonCategorias}"/>
-            <Button Grid.Row="3" x:Name="productosBoton" Width="65" Height="25" Template="{StaticResource miBoton}" Command="{Binding ActiveProductoViewCommand}" Content="{x:Static p:Resources.BotonProductos}"/>
-            <Button Grid.Row="5" x:Name="ajustesBoton" Width="65" Height="25" Template="{StaticResource miBoton}" Command="{Binding ActiveAjustesViewCommand}">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="/Icons/ajustes.png" Width="15" Height="15" Margin="0,0,2,0"></Image>
-                    <TextBlock Text="{x:Static p:Resources.BotonAjustes}"></TextBlock>
-                </StackPanel>
-            </Button>
-            <Button Grid.Row="6" x:Name="cerrarSesion" Width="65" Height="25" Template="{StaticResource miBoton}" Command="{Binding CerrarAppCommand}">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="/Icons/exit.png" Width="15" Height="15" Margin="0,0,2,0"></Image>
-                    <TextBlock Text="{x:Static p:Resources.BotonSalir}"></TextBlock>
-                </StackPanel>
-            </Button>
+            <Grid Grid.Row="1">
+                <Button Grid.Row="1" x:Name="InicioBoton" Margin="5,0,5,2" Template="{StaticResource miBoton}" Command="{Binding ActiveHomeViewCommand}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Icons/home.png" Width="15" Height="15" Margin="0,0,2,0"></Image>
+                        <TextBlock Text="{x:Static p:Resources.TextoInicio}"/>
+                    </StackPanel>
+                </Button>
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <Button x:Name="categoriasBoton" Margin="5" Template="{StaticResource miBoton}" Command="{Binding ActiveCategoriaViewCommand}" Content="{x:Static p:Resources.Categorias}"/>
+            </Grid>
+
+            <Grid Grid.Row="3">
+                <Button Grid.Row="3" x:Name="productosBoton" Margin="5" Template="{StaticResource miBoton}" Command="{Binding ActiveProductoViewCommand}" Content="{x:Static p:Resources.Productos}"/>
+            </Grid>
+
+            <Grid Grid.Row="5">
+                <Button Grid.Row="5" x:Name="ajustesBoton" Margin="5" Template="{StaticResource miBoton}" Command="{Binding ActiveAjustesViewCommand}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Icons/ajustes.png" Width="15" Height="15" Margin="0,0,2,0"></Image>
+                        <TextBlock Text="{x:Static p:Resources.Ajustes}"></TextBlock>
+                    </StackPanel>
+                </Button>
+            </Grid>
+
+            <Grid Grid.Row="6">
+                <Button Grid.Row="6" x:Name="cerrarSesion" Margin="5,0,5,2" Template="{StaticResource miBoton}" Command="{Binding CerrarAppCommand}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Icons/exit.png" Width="15" Height="15" Margin="0,0,2,0"></Image>
+                        <TextBlock Text="{x:Static p:Resources.Salir}"></TextBlock>
+                    </StackPanel>
+                </Button>
+            </Grid>
         </Grid>
 
-        <Grid Grid.Column="1" Background="#ECECEC">
+        <Grid Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="50"></RowDefinition>
                 <RowDefinition/>

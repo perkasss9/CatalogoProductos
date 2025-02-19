@@ -117,20 +117,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="BotonAjustes" xml:space="preserve">
+  <data name="Ajustes" xml:space="preserve">
     <value>Settings</value>
   </data>
-  <data name="BotonCategorias" xml:space="preserve">
-    <value>Categories</value>
-  </data>
-  <data name="BotonInicio" xml:space="preserve">
+  <data name="Inicio" xml:space="preserve">
     <value>Home</value>
   </data>
-  <data name="BotonProductos" xml:space="preserve">
-    <value>Products</value>
-  </data>
-  <data name="BotonSalir" xml:space="preserve">
+  <data name="Salir" xml:space="preserve">
     <value>Exit</value>
+  </data>
+  <data name="CambiarIdioma" xml:space="preserve">
+    <value>Change Language</value>
+  </data>
+  <data name="Categoria" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="Categorias" xml:space="preserve">
+    <value>Categories</value>
+  </data>
+  <data name="Nombre" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Producto" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="Productos" xml:space="preserve">
+    <value>Products</value>
   </data>
   <data name="TextoElementos" xml:space="preserve">
     <value>Elements</value>
@@ -140,5 +152,32 @@
   </data>
   <data name="TextoOtros" xml:space="preserve">
     <value>Other</value>
+  </data>
+  <data name="Descripcion" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Precio" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="IdCategoria" xml:space="preserve">
+    <value>ID Category</value>
+  </data>
+  <data name="AñadirCategoría" xml:space="preserve">
+    <value>Add Category</value>
+  </data>
+  <data name="AñadirProducto" xml:space="preserve">
+    <value>Add Product</value>
+  </data>
+  <data name="ModificarCategoría" xml:space="preserve">
+    <value>Modify Category</value>
+  </data>
+  <data name="ModificarProducto" xml:space="preserve">
+    <value>Modify Product</value>
+  </data>
+  <data name="BorrarCategoria" xml:space="preserve">
+    <value>Delete Category</value>
+  </data>
+  <data name="BorrarProducto" xml:space="preserve">
+    <value>Delete Product</value>
   </data>
 </root>
