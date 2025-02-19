@@ -33,8 +33,6 @@ public partial class ProductoViewModel(IRepositoryService<Product> productServic
 
     private bool CanAddProducto => (ProductoSeleccionado == null && Id == null && !string.IsNullOrEmpty(Nombre) && Precio != null && !string.IsNullOrEmpty(Descripcion) && IdCategoria != null);
 
-    public bool CanEditDeleteDeselectProducto => ProductoSeleccionado != null;
-
     partial void OnNombreChanged(string? value)
     {
         OnPropertyChanged(nameof(CanAddProducto));
@@ -80,7 +78,6 @@ public partial class ProductoViewModel(IRepositoryService<Product> productServic
 
         OnPropertyChanged(nameof(CanAddProducto));
         AddProductoCommand.NotifyCanExecuteChanged();
-        OnPropertyChanged(nameof(CanEditDeleteDeselectProducto));
     }
 
     [RelayCommand(CanExecute = nameof(CanAddProducto))]
@@ -101,16 +98,6 @@ public partial class ProductoViewModel(IRepositoryService<Product> productServic
         IdCategoria = null;
     }
 
-
-    [RelayCommand]
-    private void DeleteProducto()
-    {
-        productService.Delete(ProductoSeleccionado);
-        Productos = new ObservableCollection<Product>(productService.GetAll());
-    }
-
-
-
     [RelayCommand]
     private void UpdateProducto()
     {
@@ -120,6 +107,13 @@ public partial class ProductoViewModel(IRepositoryService<Product> productServic
         producto.Precio = Precio;
         producto.IdCategoria = IdCategoria;
         productService.Update(producto);
+        Productos = new ObservableCollection<Product>(productService.GetAll());
+    }
+
+    [RelayCommand]
+    private void DeleteProducto()
+    {
+        productService.Delete(ProductoSeleccionado);
         Productos = new ObservableCollection<Product>(productService.GetAll());
     }
 

@@ -49,7 +49,7 @@
                         <RowDefinition Height="50*"/>
                     </Grid.RowDefinitions>
                     <TextBlock Grid.Row="0" Text="ID" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-                    <TextBox Grid.Row="1" Margin="10,2,10,5" IsEnabled="False" Text="{Binding CategoriaSeleccionada.Id, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"></TextBox>
+                    <TextBox Grid.Row="1" TextAlignment="Center" Margin="10,2,10,5" IsEnabled="False" Text="{Binding CategoriaSeleccionada.Id, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"></TextBox>
                 </Grid>
 
                 <Grid Grid.Column="1">

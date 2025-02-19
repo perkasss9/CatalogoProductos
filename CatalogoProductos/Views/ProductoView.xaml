@@ -62,7 +62,7 @@
                                 <RowDefinition Height="50*"/>
                             </Grid.RowDefinitions>
                             <TextBlock Grid.Row="0" Text="ID" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-                            <TextBox Grid.Row="1" Margin="10,2,10,5" IsEnabled="False" Text="{Binding ProductoSeleccionado.Id, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"></TextBox>
+                            <TextBox Grid.Row="1" TextAlignment="Center" Margin="10,2,10,5" IsEnabled="False" Text="{Binding ProductoSeleccionado.Id, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"></TextBox>
                         </Grid>
 
                         <Grid Grid.Column="1">
@@ -80,7 +80,7 @@
                                 <RowDefinition Height="50*"/>
                             </Grid.RowDefinitions>
                             <TextBlock Grid.Row="0" Text="{x:Static p:Resources.Precio}" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-                            <TextBox Grid.Row="1" Margin="10,2,10,5" Text="{Binding Precio, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"></TextBox>
+                            <TextBox Grid.Row="1" Margin="10,2,10,5" Text="{Binding Precio, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, StringFormat=0.00}"></TextBox>
                         </Grid>
 
                         <Grid Grid.Column="1" Grid.Row="1">
@@ -89,7 +89,7 @@
                                 <RowDefinition Height="50*"/>
                             </Grid.RowDefinitions>
                             <TextBlock Grid.Row="0" Text="{x:Static p:Resources.IdCategoria}" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-                            <TextBox Grid.Row="1" Margin="10,2,10,5" Text="{Binding IdCategoria, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"></TextBox>
+                            <TextBox Grid.Row="1" TextAlignment="Center" Margin="10,2,10,5" Text="{Binding IdCategoria, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"></TextBox>
                         </Grid>
                     </Grid>
                 </Grid>

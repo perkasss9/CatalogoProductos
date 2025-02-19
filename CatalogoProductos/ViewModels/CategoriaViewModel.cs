@@ -24,8 +24,6 @@ public partial class CategoriaViewModel(IRepositoryService<Category> categorySer
 
     private bool CanAddCategoria => (CategoriaSeleccionada == null && Id == null && !string.IsNullOrEmpty(Nombre) && !string.IsNullOrEmpty(Descripcion));
 
-    public bool CanEditDeleteDeselectCategoria => CategoriaSeleccionada != null;
-
     partial void OnNombreChanged(string? value)
     {
         OnPropertyChanged(nameof(CanAddCategoria));
@@ -53,7 +51,6 @@ public partial class CategoriaViewModel(IRepositoryService<Category> categorySer
 
         OnPropertyChanged(nameof(CanAddCategoria));
         AddCategoriaCommand.NotifyCanExecuteChanged();
-        OnPropertyChanged(nameof(CanEditDeleteDeselectCategoria));
     }
 
     [RelayCommand(CanExecute = nameof(CanAddCategoria))]
@@ -71,19 +68,19 @@ public partial class CategoriaViewModel(IRepositoryService<Category> categorySer
     }
 
     [RelayCommand]
-    private void DeleteCategoria()
-    {
-        categoryService.Delete(CategoriaSeleccionada);
-        Categorias = new ObservableCollection<Category>(categoryService.GetAll());
-    }
-
-    [RelayCommand]
     private void UpdateCategoria()
     {
         Category categoria = CategoriaSeleccionada;
         categoria.Nombre = Nombre;
         categoria.Descripcion = Descripcion;
         categoryService.Update(categoria);
+        Categorias = new ObservableCollection<Category>(categoryService.GetAll());
+    }
+
+    [RelayCommand]
+    private void DeleteCategoria()
+    {
+        categoryService.Delete(CategoriaSeleccionada);
         Categorias = new ObservableCollection<Category>(categoryService.GetAll());
     }
 }
