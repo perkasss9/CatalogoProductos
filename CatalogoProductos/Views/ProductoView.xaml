@@ -100,7 +100,7 @@
                     </Grid.RowDefinitions>
 
                     <TextBlock Grid.Row="0" Text="{x:Static p:Resources.Descripcion}" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-                    <TextBox Grid.Row="1" Margin="0,2,10,5" AcceptsReturn="True" Text="{Binding Descripcion, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"></TextBox>
+                    <TextBox Grid.Row="1" Margin="0,2,10,5" AcceptsReturn="True" TextWrapping="Wrap" Text="{Binding Descripcion, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"></TextBox>
                 </Grid>
             </Grid>
 

@@ -31,6 +31,7 @@ namespace CatalogoProductos
             services.AddTransient<ProductoView>();
             services.AddTransient<CategoriaView>();
             services.AddTransient<AjustesView>();
+            services.AddTransient<GraficoView>();
 
 
             services.AddTransient<MainViewModel>();
@@ -38,6 +39,7 @@ namespace CatalogoProductos
             services.AddTransient<ProductoViewModel>();
             services.AddTransient<CategoriaViewModel>();
             services.AddTransient<AjustesViewModel>();
+            services.AddTransient<GraficoViewModel>();
 
 
             services.AddSingleton<IRepository<Product>, ProductRepository>();
@@ -60,26 +62,21 @@ namespace CatalogoProductos
 
                 if (!dbContext.Categories.Any())
                 {
-                    dbContext.Categories.Add(new Category { Nombre = "Zapatos", Descripcion = "Categoría de zapatos" });
-                    dbContext.Categories.Add(new Category { Nombre = "Abrigos", Descripcion = "Categoría de abrigos" });
-                    dbContext.Categories.Add(new Category { Nombre = "Pantalones", Descripcion = "Categoría de pantalones" });
+                    dbContext.Categories.Add(new Category { Nombre = "Sudaderas", Descripcion = "Categoría de sudaderas" });
                     dbContext.Categories.Add(new Category { Nombre = "Camisetas", Descripcion = "Categoría de camisetas" });
-                    dbContext.Categories.Add(new Category { Nombre = "Calcetines", Descripcion = "Categoría de calcetines" });
+                    dbContext.Categories.Add(new Category { Nombre = "Pantalones", Descripcion = "Categoría de pantalones" });
+                    dbContext.Categories.Add(new Category { Nombre = "Zapatos", Descripcion = "Categoría de zapatos" });
                     dbContext.SaveChanges();
                 }
 
                 if (!dbContext.Products.Any())
                 {
-                    dbContext.Products.Add(new Product { Nombre = "Nike Air Jordan 1 Low", Precio = 149.99, Descripcion = "Zapatillas Air Jordan 1 Low", IdCategoria = 1 });
-                    dbContext.Products.Add(new Product { Nombre = "Adidas Campus", Precio = 125.99, Descripcion = "Zapatillas Campus de Adidas", IdCategoria = 1 });
-                    dbContext.Products.Add(new Product { Nombre = "Abrigo North Face", Precio = 99.99, Descripcion = "Abrigo de la marca North Face", IdCategoria = 2 });
-                    dbContext.Products.Add(new Product { Nombre = "Pantalones Adidas", Precio = 49.99, Descripcion = "Pantalones de la marca Adidas", IdCategoria = 3 });
-                    dbContext.Products.Add(new Product { Nombre = "Camiseta Amiri", Precio = 79.99, Descripcion = "Camiseta de la marca Amiri", IdCategoria = 4 });
-                    dbContext.Products.Add(new Product { Nombre = "Pantalones Nike", Precio = 45.99, Descripcion = "pantalones de la marca Nike", IdCategoria = 3 });
-                    dbContext.Products.Add(new Product { Nombre = "Abrigo Puma", Precio = 85.00, Descripcion = "Abrigo de la marca Puma", IdCategoria = 2 });
-                    dbContext.Products.Add(new Product { Nombre = "Calcetines Jordan", Precio = 9.99, Descripcion = "Calcetines de la marca Jordan", IdCategoria = 5 });
-                    dbContext.Products.Add(new Product { Nombre = "Calcetines Primark", Precio = 4.99, Descripcion = "Calcetines del Primark", IdCategoria = 5 });
-                    dbContext.Products.Add(new Product { Nombre = "Camiseta Puma", Precio = 29.99, Descripcion = "Camiseta de la marca Puma", IdCategoria = 4 });
+                    dbContext.Products.Add(new Product { Nombre = "Sudadera Zara", Precio = 25.99, Descripcion = "Sudadera de Zara", IdCategoria = 1 });
+                    dbContext.Products.Add(new Product { Nombre = "Sudadera Ralph Lauren", Precio = 250.00, Descripcion = "Sudadera de Ralph Lauren", IdCategoria = 1 });
+                    dbContext.Products.Add(new Product { Nombre = "Camiseta Nike", Precio = 30.00, Descripcion = "Camiseta de Nike", IdCategoria = 2 });
+                    dbContext.Products.Add(new Product { Nombre = "Pantalones Levis", Precio = 65.99, Descripcion = "Pantalones de Levis", IdCategoria = 3 });
+                    dbContext.Products.Add(new Product { Nombre = "New Balance 550", Precio = 125.00, Descripcion = "Zapatillas de New Balance", IdCategoria = 4 });
+                    dbContext.Products.Add(new Product { Nombre = "Nike Vapormax", Precio = 220.00, Descripcion = "Zapatillas de Nike", IdCategoria = 4 });
                     dbContext.SaveChanges();
                 }
                 dbContext.SaveChanges();

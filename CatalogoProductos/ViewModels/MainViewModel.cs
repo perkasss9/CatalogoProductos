@@ -8,7 +8,8 @@ partial class MainViewModel(
         HomeViewModel homeViewModel,
         ProductoViewModel productoViewModel,
         CategoriaViewModel categoriaViewModel,
-        AjustesViewModel ajustesViewModel
+        AjustesViewModel ajustesViewModel,
+        GraficoViewModel graficoViewModel
     ) : ObservableObject
 {
     [ObservableProperty]
@@ -22,6 +23,8 @@ partial class MainViewModel(
 
     public AjustesViewModel ajustesViewModel { get; } = ajustesViewModel;
 
+    public GraficoViewModel graficoViewModel { get; } = graficoViewModel;
+
     [RelayCommand]
     private void ActiveHomeView() => ActiveView = homeViewModel;
 
@@ -33,6 +36,13 @@ partial class MainViewModel(
 
     [RelayCommand]
     private void ActiveAjustesView() => ActiveView = ajustesViewModel;
+
+    [RelayCommand]
+    private void ActivateGraficoView()
+    {
+        ActiveView = graficoViewModel;
+        graficoViewModel.RecargarGraficosCommand.Execute(this);
+    }
 
     [RelayCommand]
     private void CerrarApp()

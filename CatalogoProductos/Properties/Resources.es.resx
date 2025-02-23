@@ -180,4 +180,10 @@
   <data name="BorrarProducto" xml:space="preserve">
     <value>Borrar Producto</value>
   </data>
+  <data name="Graficos" xml:space="preserve">
+    <value>Gráficos</value>
+  </data>
+  <data name="ProductosporCategoria" xml:space="preserve">
+    <value>Productos por Categoría</value>
+  </data>
 </root>

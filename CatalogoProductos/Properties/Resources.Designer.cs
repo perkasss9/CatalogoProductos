@@ -142,6 +142,15 @@ namespace CatalogoProductos.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Graphics.
+        /// </summary>
+        public static string Graficos {
+            get {
+                return ResourceManager.GetString("Graficos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a ID Category.
         /// </summary>
         public static string IdCategoria {
@@ -210,6 +219,15 @@ namespace CatalogoProductos.Properties {
         public static string Productos {
             get {
                 return ResourceManager.GetString("Productos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Products by Category.
+        /// </summary>
+        public static string ProductosporCategoria {
+            get {
+                return ResourceManager.GetString("ProductosporCategoria", resourceCulture);
             }
         }
         
